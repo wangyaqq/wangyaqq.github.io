@@ -37,8 +37,8 @@
     footer{margin-top:28px;color:#7a828a;text-align:center}
 
     .intro-grid{display:grid;gap:24px}
-    @media(min-width:860px){.intro-grid{grid-template-columns:1.25fr .75fr;align-items:start}}
-    .personal-photo{display:block;width:100%;max-width:240px;height:auto;border-radius:16px;border:1px solid var(--border);box-shadow:0 6px 20px rgba(0,0,0,.06);margin:0 auto}
+    @media(min-width:860px){.intro-grid{grid-template-columns:1fr 260px;align-items:start}} /* narrower text col, fixed photo col */
+    .personal-photo{display:block;width:100%;max-width:200px;height:auto;border-radius:16px;border:1px solid var(--border);box-shadow:0 6px 20px rgba(0,0,0,.06);margin:0 auto}
 
     [data-page]{display:none}
     [data-page].active{display:block}
@@ -51,7 +51,7 @@
 </head>
 <body>
   <div class="top-nav" aria-label="Quick navigation">
-    <a href="?page=intro" title="Profile">Profile</a>
+    <a href="?page=intro" title="Brief introduction">Brief introduction</a>
     <a href="?page=publications" title="Publications">Publications</a>
     <a href="?page=conferences" title="Conferences">Conferences</a>
   </div>
@@ -65,7 +65,7 @@
         <h1 class="name">Wang Yaqi</h1>
         <div class="subtitle">Ph.D. Candidate in Finance · Nanyang Technological University (NTU)</div>
         <div class="meta">
-          <span>📍 Singapore/China</span>
+          <span>📍 Singapore</span>
           <span>✉️ <a href="mailto:yaqi002@e.ntu.edu.sg">yaqi002@e.ntu.edu.sg</a></span>
           <span>☎️ <a href="tel:+8618840903577">+86 18840903577</a></span>
         </div>
@@ -81,7 +81,6 @@
           </p>
           <p class="muted"><strong>Research interests:</strong> Sustainable Finance, ESG, Merger &amp; Acquisition, Corporate Governance, Fintech.</p>
 
-          <h2 id="profile" style="margin-top:28px">Profile</h2>
           <div class="profile-links">
             <a href="Wang Yaqi (NTU) CV-Finance.pdf" target="_blank" rel="noopener" style="text-decoration:underline">CV (English)</a>
             <a href="王雅琪 (南洋理工大学) 中文简历 - 金融.pdf" target="_blank" rel="noopener" style="text-decoration:underline">CV (Chinese)</a>
@@ -93,7 +92,7 @@
             </a>
           </div>
         </div>
-        <div style="display:flex;align-items:flex-start;justify-content:center">
+        <div style="display:flex;align-items:flex-start;justify-content:flex-end">
           <img class="personal-photo" src="IMG_7132.jpg" alt="Personal photo of Wang Yaqi" />
         </div>
       </section>
