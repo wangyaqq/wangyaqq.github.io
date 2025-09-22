@@ -1,23 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Welcome to my website</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wang Yaqi | Ph.D. in Finance</title>
+  <meta name="description" content="Academic homepage of Wang Yaqi — Ph.D. candidate in Finance at Nanyang Technological University (NTU)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b0c10;--text:#e9eef2;--muted:#a8b3bd;--card:#11141a;--accent:#58a6ff;--ring:#1f6feb}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b0c10, #0e1116 35%, #0b0c10);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{opacity:.9;text-decoration:underline}
+    .wrap{max-width:980px;margin:0 auto;padding:32px 20px 80px}
+    header{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;margin-top:8px;margin-bottom:28px}
+    .avatar{width:112px;height:112px;border-radius:20px;overflow:hidden;border:1px solid #1f2328;box-shadow:0 6px 30px rgba(0,0,0,.35)}
+    .avatar img{width:100%;height:100%;object-fit:cover}
+    .name{font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:.2px;margin:0}
+    .subtitle{margin-top:4px;color:var(--muted)}
+    .meta{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px;color:var(--muted)}
+    .meta span{display:inline-flex;align-items:center;gap:8px}
+    .chip{display:inline-flex;align-items:center;padding:6px 10px;border:1px solid #2a2f36;background:#0e1218;border-radius:999px;color:#cdd6df;font-size:13px}
+    nav{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 10px}
+    nav a{padding:8px 12px;border-radius:10px;border:1px solid #222832;background:#0e1117;color:#d7dee7}
+    section{background:var(--card);border:1px solid #1a1f25;border-radius:16px;padding:22px 20px;margin:16px 0;box-shadow:0 10px 40px rgba(0,0,0,.25)}
+    section h2{margin:0 0 6px;font-size:22px}
+    .muted{color:var(--muted)}
+    ul{margin:10px 0 0 20px}
+    li+li{margin-top:10px}
+    .icons{display:flex;gap:12px;align-items:center}
+    .icon-btn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:1px solid #263042;background:#10141b}
+    .icon-btn:hover{transform:translateY(-1px)}
+    footer{margin-top:28px;color:#90a0ae;text-align:center}
+    .pill{display:inline-block;font-size:12px;color:#9fb0c2;border:1px solid #263042;border-radius:999px;padding:2px 8px;margin-left:8px}
+    .grid{display:grid;gap:14px}
+    @media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+    .kbd{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-size:12px;padding:2px 6px;border-radius:6px;background:#0e1218;border:1px solid #222832;color:#cbd6e1}
+  </style>
 </head>
 <body>
-  <h1>Hi,</h1>
-  
-  <p>I am Wang Yaqi, currently a Ph.D. candidate in Finance at Nanyang Technological University.</p>
-  
-  <p>My research interests include Sustainable Finance, ESG, Mergers & Acquisitions, Corporate Governance, and Fintech.</p>
-  
-  <p>I am on the job market now. My JMP title is "Target Employee Reviews and Acquisition Outcomes: Does a Private Target Make a Difference?"</p>
-  
-  <p>Please email me at: 
-    <a href="mailto:yaqi002@e.ntu.edu.sg">yaqi002@e.ntu.edu.sg</a>
-  </p>
+  <div class="wrap">
+    <header>
+      <div class="avatar">
+        <!-- Replace src with your photo if desired -->
+        <img alt="Portrait of Wang Yaqi" src="https://wangyaqi19970527.wixsite.com/mysite/_files/ugd/fc2f75_2d2bd8f454b64dcdb4d8b4e6be6a9daf~mv2.jpg" />
+      </div>
+      <div>
+        <h1 class="name">Wang Yaqi</h1>
+        <div class="subtitle">Ph.D. Candidate in Finance · Nanyang Technological University (NTU)</div>
+        <div class="meta">
+          <span>📍 Singapore</span>
+          <span>✉️ <a href="mailto:yaqi002@e.ntu.edu.sg">yaqi002@e.ntu.edu.sg</a></span>
+          <span>☎️ <a href="tel:+6580842957">+65 8084 2957</a></span>
+        </div>
+        <nav>
+          <a href="#intro">Brief introduction</a>
+          <a href="#publications">Publications</a>
+          <a href="#conferences">Conferences</a>
+          <a href="#contact">CV & Links</a>
+        </nav>
+        <div class="chip">On the job market end of 2025</div>
+      </div>
+    </header>
 
-  <p>CV:</p>
-  <p><a href="Wang Yaqi (NTU) CV.pdf" target="_blank">My CV (PDF)</a></p>
+    <section id="intro">
+      <h2>Brief introduction</h2>
+      <p>
+        I am currently a Ph.D. candidate in Finance at Nanyang Technological University (Singapore) and will be on the job market at the end of 2025. I earned my Master’s degree in Accounting from Central University of Finance and Economics, Beijing, China.
+      </p>
+      <p class="muted"><strong>Research interests:</strong> Sustainable Finance, ESG, Merger &amp; Acquisition, Corporate Governance, Fintech.</p>
+    </section>
+
+    <section id="publications">
+      <h2>Publications & Working Papers</h2>
+      <ul>
+        <li><em>Does Stock Market Liberalization Improve Corporate Innovation Output? A Quasi-Experiment of Mainland China–Hong Kong Stock Connect</em>. Accounting and Economics Research (CSSCI indexed), 2020(01): 21–37. (with Jianqiao Huang, Yaqi Wang, Yilu Deng, and Yunsen Chen)</li>
+        <li><em>The Social Costs of Corporate Short-Term Incentives</em>, with Tao Chen and Qifei Zhu, 2025.</li>
+        <li><em>Target Employee Reviews and Acquisition Outcomes: Does a Private Target Make a Difference?</em>, with Tao Chen, Chen Lin, and Jianfei Zhu, 2025. <span class="pill">Job Market Paper</span> <span class="pill">Accepted by AsianFA &amp; EFMA Annual Conference</span></li>
+        <li><em>Employee Feedback as a Predictor for Supply Chain Resilience: Insights from Glassdoor Data</em>, with Tao Chen and Haiyun Zhu, 2025.</li>
+        <li><em>From Policy to Practice: The Positive Externalities of Foreign Investment Deregulation on Investment Efficiency in China</em>, with Yunsen Chen and Wei Yuan, 2024, submitted to <em>Pacific-Basin Finance Journal</em> (special issue, under review).</li>
+      </ul>
+    </section>
+
+    <section id="conferences">
+      <h2>Conferences & Presentations</h2>
+      <ul>
+        <li>June 2025 — 2025 Asian Finance Association (AsianFA) Annual Conference, Taiwan, China: <em>Target Employee Reviews and Acquisition Outcomes: Does a Private Target Make a Difference?</em></li>
+        <li>September 2024 — Pacific-Basin Finance Journal (PBFJ) Special Issue Conference: Chinese Capital Market, Xi’an, Shanxi, China: <em>From Policy to Practice: The Positive Externalities of Foreign Investment Deregulation on Investment Efficiency in China</em></li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>CV & Links</h2>
+      <div class="icons" aria-label="Profile links">
+        <a class="icon-btn" href="https://94e8b63b-cc18-4e37-a747-b539f443a0bd.filesusr.com/ugd/fc2f75_77e68ab4b6704c2e998914590ccce828.pdf" target="_blank" rel="noopener" title="Download CV" aria-label="Download CV"> 
+          <!-- CV icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke="currentColor" stroke-width="1.5"/><path d="M14 2v6h6" stroke="currentColor" stroke-width="1.5"/><path d="M8 13h8M8 17h5M8 9h2" stroke="currentColor" stroke-width="1.5"/></svg>
+        </a>
+        <a class="icon-btn" href="https://www.linkedin.com/in/yaqi-wang-071b24239/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
+          <!-- LinkedIn icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9h4v12H3zM10 9h4v1.8h.06a4.4 4.4 0 0 1 3.94-2.17c4.21 0 4.99 2.77 4.99 6.37V21h-4v-5.5c0-1.31-.02-3-1.83-3-1.84 0-2.12 1.43-2.12 2.9V21h-4z" fill="currentColor"/></svg>
+        </a>
+        <a class="icon-btn" href="https://twitter.com/yourhandle" target="_blank" rel="noopener" title="Twitter/X" aria-label="Twitter/X">
+          <!-- X/Twitter icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 3l7.4 9.1L4 21h3.1l6-7.2 4.9 7.2H20l-7-9.7L19.6 3H16.5l-5.5 6.6L6.5 3H4z" fill="currentColor"/></svg>
+        </a>
+      </div>
+      <p class="muted" style="margin-top:12px">Tip: replace <span class="kbd">https://twitter.com/yourhandle</span> with your own handle (or remove the icon).
+        You can also add Instagram or Google Scholar as needed.</p>
+    </section>
+
+    <footer>
+      <small>© <span id="year"></span> Yaqi Wang. All rights reserved.</small>
+    </footer>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
