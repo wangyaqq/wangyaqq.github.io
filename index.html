@@ -16,20 +16,18 @@
     a:hover{text-decoration:underline}
     .wrap{max-width:980px;margin:0 auto;padding:32px 20px 80px}
     header{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;margin-top:8px;margin-bottom:22px}
-    .avatar{width:112px;height:112px;border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 4px 16px rgba(0,0,0,.06)}
-    .avatar img{width:100%;height:100%;object-fit:cover}
+
+    .avatar{display:inline-block;border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 4px 16px rgba(0,0,0,.06);background:#fff}
+    .avatar img{display:block;width:auto;height:auto;max-width:112px}
+
     .name{font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:.2px;margin:0}
     .subtitle{margin-top:4px;color:var(--muted)}
     .meta{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px;color:var(--muted)}
     .meta span{display:inline-flex;align-items:center;gap:8px}
 
-    /* top-right icon row */
-    .top-icons{position:fixed;top:14px;right:18px;display:flex;gap:10px;z-index:50}
-    .icon-btn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;border:1px solid var(--border);background:#ffffff;box-shadow:0 2px 10px rgba(0,0,0,.05)}
-    .icon-btn:hover{transform:translateY(-1px)}
-
-    nav{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
-    nav a{padding:8px 12px;border-radius:10px;border:1px solid var(--border);background:#fff;color:var(--text)}
+    .top-nav{position:fixed;top:14px;right:18px;display:flex;gap:10px;z-index:50}
+    .top-nav a{display:inline-flex;align-items:center;justify-content:center;height:38px;padding:0 12px;border-radius:10px;border:1px solid var(--border);background:#ffffff;box-shadow:0 2px 10px rgba(0,0,0,.05);color:var(--text);font-weight:600}
+    .top-nav a:hover{transform:translateY(-1px)}
 
     .card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px 20px;margin:16px 0;box-shadow:0 8px 24px rgba(0,0,0,.05)}
     .card h2{margin:0 0 6px;font-size:22px}
@@ -38,64 +36,39 @@
     li+li{margin-top:10px}
     footer{margin-top:28px;color:#7a828a;text-align:center}
 
-    /* intro layout with personal photo on right */
     .intro-grid{display:grid;gap:24px}
     @media(min-width:860px){.intro-grid{grid-template-columns:1.25fr .75fr;align-items:start}}
-    .personal-photo{width:100%;border-radius:16px;border:1px solid var(--border);box-shadow:0 6px 20px rgba(0,0,0,.06)}
+    .personal-photo{display:block;width:100%;max-width:380px;height:auto;border-radius:16px;border:1px solid var(--border);box-shadow:0 6px 20px rgba(0,0,0,.06);margin-left:auto}
 
-    /* simple router visibility */
     [data-page]{display:none}
     [data-page].active{display:block}
+    nav{display:none}
   </style>
 </head>
 <body>
-  <!-- top-right icon row available on every page -->
-  <div class="top-icons" aria-label="Quick navigation">
-    <a class="icon-btn" href="?page=intro" title="Brief introduction" aria-label="Brief introduction">
-      <!-- user icon -->
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.6"/><path d="M4 20c1.8-4 7.9-4 8-4s6.2 0 8 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-    </a>
-    <a class="icon-btn" href="?page=publications" title="Publications" aria-label="Publications">
-      <!-- book icon -->
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3V4z" stroke="currentColor" stroke-width="1.6"/><path d="M5 16c.6-.6 1.6-1 3-1h13" stroke="currentColor" stroke-width="1.6"/></svg>
-    </a>
-    <a class="icon-btn" href="?page=conferences" title="Conferences" aria-label="Conferences">
-      <!-- calendar icon -->
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 3v4M16 3v4M3 10h18" stroke="currentColor" stroke-width="1.6"/></svg>
-    </a>
-    <a class="icon-btn" href="?page=links" title="CV & Links" aria-label="CV & Links">
-      <!-- link icon -->
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M9 15l-2 2a4 4 0 1 1-6-6l2-2M15 9l2-2a4 4 0 1 1 6 6l-2 2" stroke="currentColor" stroke-width="1.6"/><path d="M8 12l8 0" stroke="currentColor" stroke-width="1.6"/></svg>
-    </a>
+  <div class="top-nav" aria-label="Quick navigation">
+    <a href="?page=intro" title="Brief introduction">Brief introduction</a>
+    <a href="?page=publications" title="Publications">Publications</a>
+    <a href="?page=conferences" title="Conferences">Conferences</a>
   </div>
 
   <div class="wrap">
     <header>
       <div class="avatar">
-        <!-- Replace with your ID photo filename in the repo, e.g., id_photo.jpg -->
-        <img alt="Portrait of Wang Yaqi" src="IMG_0483.PNG" />
+        <img alt="Portrait of Wang Yaqi" src="id_photo.jpg" />
       </div>
       <div>
         <h1 class="name">Wang Yaqi</h1>
         <div class="subtitle">Ph.D. Candidate in Finance · Nanyang Technological University (NTU)</div>
         <div class="meta">
-          <span>📍 Singapore</span>
+          <span>📍 Singapore/China</span>
           <span>✉️ <a href="mailto:yaqi002@e.ntu.edu.sg">yaqi002@e.ntu.edu.sg</a></span>
           <span>☎️ <a href="tel:+8618840903577">+86 18840903577</a></span>
         </div>
-        <nav>
-          <!-- text nav (works like the top-right icons) -->
-          <a href="?page=intro">Brief introduction</a>
-          <a href="?page=publications">Publications</a>
-          <a href="?page=conferences">Conferences</a>
-          <a href="?page=links">CV & Links</a>
-        </nav>
       </div>
     </header>
 
-    <!-- PAGES -->
     <main>
-      <!-- INTRO PAGE -->
       <section class="card intro-grid" data-page="intro">
         <div>
           <h2>Brief introduction</h2>
@@ -103,14 +76,24 @@
             I am currently a Ph.D. candidate in Finance at Nanyang Technological University (Singapore) and will be on the job market at the end of 2025. I earned my Master’s degree in Accounting from Central University of Finance and Economics, Beijing, China.
           </p>
           <p class="muted"><strong>Research interests:</strong> Sustainable Finance, ESG, Merger &amp; Acquisition, Corporate Governance, Fintech.</p>
+
+          <h2 style="margin-top:28px">CV & Links</h2>
+          <p>Select a CV format:</p>
+          <ul>
+            <li><a href="Wang Yaqi (NTU) CV-Finance.pdf" target="_blank" rel="noopener">CV (English)</a></li>
+            <li><a href="王雅琪 (南洋理工大学) 中文简历 - 金融.pdf" target="_blank" rel="noopener">CV (Chinese)</a></li>
+          </ul>
+          <p>Profiles:</p>
+          <ul>
+            <li><a href="https://www.linkedin.com/in/yaqi-wang-071b24239/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/wang_yaqq/#" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
         </div>
         <div>
-          <!-- Personal photo on the right side of the intro page -->
-          <img class="personal-photo" src="IMG_7132.jpg" alt="Personal photo of Wang Yaqi" />
+          <img class="personal-photo" src="personal_photo.jpg" alt="Personal photo of Wang Yaqi" />
         </div>
       </section>
 
-      <!-- PUBLICATIONS PAGE -->
       <section class="card" data-page="publications">
         <h2>Publications & Working Papers</h2>
         <ul>
@@ -122,39 +105,12 @@
         </ul>
       </section>
 
-      <!-- CONFERENCES PAGE -->
       <section class="card" data-page="conferences">
         <h2>Conferences & Presentations</h2>
         <ul>
           <li>June 2025 — 2025 Asian Finance Association (AsianFA) Annual Conference, Taiwan, China: <em>Target Employee Reviews and Acquisition Outcomes: Does a Private Target Make a Difference?</em></li>
           <li>September 2024 — Pacific-Basin Finance Journal (PBFJ) Special Issue Conference: Chinese Capital Market, Xi’an, Shanxi, China: <em>From Policy to Practice: The Positive Externalities of Foreign Investment Deregulation on Investment Efficiency in China</em></li>
         </ul>
-      </section>
-
-      <!-- LINKS PAGE -->
-      <section class="card" data-page="links">
-        <h2>CV & Links</h2>
-        <p>Select a CV format:</p>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 16px">
-          <!-- Update hrefs to match the actual filenames in your repo -->
-          <a class="icon-btn" href="Wang Yaqi (NTU) CV-Finance.pdf" target="_blank" rel="noopener" title="CV (English)" aria-label="CV (English)">
-            <!-- CV icon -->
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke="currentColor" stroke-width="1.5"/><path d="M14 2v6h6" stroke="currentColor" stroke-width="1.5"/><path d="M8 13h8M8 17h5M8 9h2" stroke="currentColor" stroke-width="1.5"/></svg>
-          </a>
-          <a class="icon-btn" href="王雅琪 (南洋理工大学) 中文简历 - 金融.pdf" target="_blank" rel="noopener" title="CV (Chinese)" aria-label="CV (Chinese)">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke="currentColor" stroke-width="1.5"/><path d="M14 2v6h6" stroke="currentColor" stroke-width="1.5"/><path d="M8 13h8M8 17h5M8 9h2" stroke="currentColor" stroke-width="1.5"/></svg>
-          </a>
-        </div>
-
-        <p>Profiles:</p>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="icon-btn" href="https://www.linkedin.com/in/yaqi-wang-071b24239/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9h4v12H3zM10 9h4v1.8h.06a4.4 4.4 0 0 1 3.94-2.17c4.21 0 4.99 2.77 4.99 6.37V21h-4v-5.5c0-1.31-.02-3-1.83-3-1.84 0-2.12 1.43-2.12 2.9V21h-4z" fill="currentColor"/></svg>
-          </a>
-          <a class="icon-btn" href="https://www.instagram.com/wang_yaqq/#" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 3l7.4 9.1L4 21h3.1l6-7.2 4.9 7.2H20l-7-9.7L19.6 3H16.5l-5.5 6.6L6.5 3H4z" fill="currentColor"/></svg>
-          </a>
-        </div>
       </section>
     </main>
 
@@ -164,7 +120,6 @@
   </div>
 
   <script>
-    // Simple router using the `?page=` query parameter. Defaults to intro.
     function getPageFromURL(){
       const params = new URLSearchParams(location.search);
       return params.get('page') || 'intro';
@@ -177,7 +132,6 @@
     window.addEventListener('popstate',()=>showPage(getPageFromURL()));
     showPage(getPageFromURL());
 
-    // Keep footer year current
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
